@@ -1,6 +1,6 @@
 {
   "name": "@anichart/remotion",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Utility library for generate video from anichart by remotion.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -20,7 +20,7 @@
     "url": "https://github.com/jannchie/anichart-remotion/issues"
   },
   "dependencies": {
-    "anichart": "3.0.0-alpha.4",
+    "anichart": ">=3.0.0",
     "remotion": ">=3.0.19"
   },
   "peerDependencies": {
