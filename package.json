@@ -1,7 +1,7 @@
 {
   "name": "@anichart/remotion",
   "version": "0.0.1",
-  "description": "Utility library for generate video from anichart by remotion",
+  "description": "Utility library for generate video from anichart by remotion.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
