@@ -1,6 +1,6 @@
 {
   "name": "@anichart/remotion",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Utility library for generate video from anichart by remotion.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,7 +8,8 @@
   "scripts": {
     "lint": "eslint src --ext ts,tsx",
     "watch": "tsc -w",
-    "build": "tsc -d"
+    "build": "tsc -d",
+    "prepublish": "pnpm build"
   },
   "author": "Jannchie <jannchie@gmail.com>",
   "license": "MIT",
