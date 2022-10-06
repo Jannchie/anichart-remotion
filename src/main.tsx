@@ -1,10 +1,10 @@
 import { continueRender, delayRender } from "remotion";
 import { useCurrentFrame, useVideoConfig } from "remotion";
 import { useMemo, useState } from "react";
-import * as ANI from "anichart";
+import { Stage } from "anichart";
 
 export type AnichartProps = {
-  initStage: (stage: ANI.Stage) => void;
+  initStage: (stage: Stage) => void;
   left?: number;
   top?: number;
   right?: number;
@@ -17,20 +17,20 @@ export const Anichart: React.FC<AnichartProps> = ({
   top = 0,
   right = 0,
   bottom = 0,
-}) => {
+}: AnichartProps) => {
   const config = useVideoConfig();
   const frame = useCurrentFrame();
   const [handle] = useState(() => delayRender());
   const [canvas, setCanvas] = useState<HTMLCanvasElement | null>(null);
   const stage = useMemo(() => {
     if (canvas !== null) {
-      const s = new ANI.Stage(canvas);
+      const s = new Stage(canvas);
       s.options.fps = config.fps;
       s.options.sec = config.durationInFrames / config.fps;
       initStage(s);
       s.setup();
       s.loadRecourse().then(() => continueRender(handle));
-      s.render(1);
+      s.render(0);
       return s;
     }
   }, [canvas, config.durationInFrames, config.fps, handle, initStage]);
